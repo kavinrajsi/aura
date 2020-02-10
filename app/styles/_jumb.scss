@@ -21,7 +21,7 @@
 .intro {
   &--text {
     padding-top: 176px;
-    @include interpolate('padding-top', 600px, 48px, 900px, 176px, 'ease-in');
+    @include interpolate('padding-top', 600px, 48px, 900px, 280px, 'ease-in');
     font-family: var(--font);
     font-style: normal;
     font-weight: normal;
