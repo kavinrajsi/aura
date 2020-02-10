@@ -1,5 +1,3 @@
-
-
 // button
 .link {
   &__button {
@@ -69,7 +67,13 @@
     // padding-top: 56px;
     @include interpolate('padding-top', 600px, 40px, 900px, 56px, 'ease-in');
     padding-bottom: 21px;
-    transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s 0s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    // max-width: 1200px;
+    background: transparent;
 
     &.fixed {
       transition: all 0.2s ease-in-out 0s;
@@ -81,7 +85,8 @@
       top: 0;
       left: 0;
       right: 0;
-       .row{
+
+      .row {
         display: flex;
         justify-content: space-between;
       }
