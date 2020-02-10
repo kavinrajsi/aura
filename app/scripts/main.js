@@ -6,13 +6,7 @@ $(function () {
     loop: true,
     loopCount: Infinity
   });
-  // $(window).scroll(function () {
-  //   var sticky = $('.header__nav'),
-  //     scroll = $(window).scrollTop();
 
-  //   if (scroll >= 500) sticky.addClass('fixed');
-  //   else sticky.removeClass('fixed');
-  // });
   // Menu Nav
   function smoothSctollTop() {
     $('a').on('click', function (event) {
