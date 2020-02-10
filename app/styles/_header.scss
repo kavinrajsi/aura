@@ -50,6 +50,7 @@
 
   &__text:hover,
   &__text {
+    display: flex;
     @extend %heading6;
     color: #616369;
 
