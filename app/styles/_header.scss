@@ -68,7 +68,9 @@
     @include interpolate('padding-top', 600px, 40px, 900px, 56px, 'ease-in');
     padding-bottom: 21px;
     transition: all 0.2s 0s;
+    @media(min-width: 768px){
     position: fixed;
+    }
     top: 0;
     left: 0;
     right: 0;
