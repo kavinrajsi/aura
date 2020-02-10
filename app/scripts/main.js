@@ -1,9 +1,68 @@
-console.log('\'Allo \'Allo!');
+$(function () {
+  // 'use strict';
+  const typed = new Typed('#type', {
+    strings: ['Digital Marketing', 'UX/UI Design'],
+    typeSpeed: 30,
+    loop: true,
+    loopCount: Infinity
+  });
+  $(window).scroll(function() {
+    var sticky = $('.header__nav'),
+      scroll = $(window).scrollTop();
 
-// Uncomment to enable Bootstrap tooltips
-// https://getbootstrap.com/docs/4.0/components/tooltips/#example-enable-tooltips-everywhere
-// $(function () { $('[data-toggle="tooltip"]').tooltip(); });
+    if (scroll >= 500) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+  });
+  // Menu Nav
+  function smoothSctollTop() {
+    $('a').on('click', function (event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 140
+        }, 1000);
+      }
+    });
+  }
+  smoothSctollTop();
 
-// Uncomment to enable Bootstrap popovers
-// https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
-// $(function () { $('[data-toggle="popover"]').popover(); });
+  // $('#free-call-form').submit(function (e) {
+  //   e.preventDefault();
+  //   // var valid;
+  //   // valid = validateContact();
+  //   // if(valid) {
+  //   $.ajax({
+  //     url: 'mail.php',
+  //     data: 'username=' +
+  //       $('#username').val() +
+  //       '&email=' +
+  //       $('#email').val() +
+  //       '&phoneNumber=' +
+  //       $('#phoneNumber').val() +
+  //       '&selectCourse=' +
+  //       $('input[name='selectCourse']:checked').val(),
+  //     type: 'POST',
+  //     success: function (data) {
+  //       $('#mail-status').html(data);
+  //       $('#free-call-form')[0].reset();
+  //     },
+  //     error: function () {}
+  //   });
+  //   // }
+  // });
+
+  // $vi = $(document).width();
+  // console.log($vi);
+  if ($(document).width() < 768) {
+    var controller = new ScrollMagic.Controller();
+    var scene = new ScrollMagic.Scene({
+        triggerElement: '.duration-enquire-card',
+        offset: -120
+      })
+      .setTween('.mcta', 0.5, {
+        display: 'none'
+      })
+  }
+
+});

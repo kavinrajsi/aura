@@ -1,0 +1,81 @@
+
+.think-master-section {
+  padding-top: 145px;
+  padding-bottom: 87px;
+  padding-right: 93px;
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #F3F4F4;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -9999em;
+    z-index: -1;
+  }
+}
+
+.think-master-title {
+  margin-bottom: 32px;
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 46px;
+  color: #1C2028;
+
+  strong {
+    display: block;
+    font-weight: 600;
+  }
+}
+
+.think-master-list li {
+  @extend %para;
+  margin-bottom: 24px;
+  padding-left: 36px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjcyIDguNzlMMTAuNDMgMTMuMDlMOC43OCAxMS40NFYxMS40NEM4LjQyMDc2IDExLjAyMDUgNy43ODk0OCAxMC45NzE3IDcuMzcgMTEuMzMwOUM2Ljk1MDUyIDExLjY5MDEgNi45MDE2OCAxMi4zMjE0IDcuMjYwOTEgMTIuNzQwOUM3LjI5NDQxIDEyLjc4IDcuMzMwODggMTIuODE2NSA3LjM3IDEyLjg1TDkuNzIgMTUuMjFDOS45MDg3MiAxNS4zOTcyIDEwLjE2NDIgMTUuNTAxNSAxMC40MyAxNS41QzEwLjY5MjMgMTUuNDk4OSAxMC45NDM3IDE1LjM5NDcgMTEuMTMgMTUuMjFMMTYuMTMgMTAuMjFDMTYuNTIyMSA5LjgyMTA4IDE2LjUyNDcgOS4xODc5MiAxNi4xMzU4IDguNzk1OEMxNi4xMzM5IDguNzkzODYgMTYuMTMxOSA4Ljc5MTkzIDE2LjEzIDguNzlDMTUuNzQgOC40MDIyOCAxNS4xMSA4LjQwMjI4IDE0LjcyIDguNzlWOC43OVpNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI5IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOSAyMiAyMiAxNy41MjI5IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOSAyIDEyIDJWMlpNMTIgMjBDNy41ODE3MiAyMCA0IDE2LjQxODMgNCAxMkM0IDcuNTgxNzIgNy41ODE3MiA0IDEyIDRDMTYuNDE4MyA0IDIwIDcuNTgxNzIgMjAgMTJDMjAgMTYuNDE4MyAxNi40MTgzIDIwIDEyIDIwWiIgZmlsbD0iIzFDMjAyOCIvPgo8L3N2Zz4K");
+}
+
+.section-title {
+  @extend %heading3;
+  color: #1C2028;
+
+  strong {
+    display: block;
+    font-weight: 600;
+  }
+}
+
+.why-arise {
+  display: none;
+  padding-top: 224px;
+  padding-bottom: 224px;
+
+  &--item {
+    ul {
+      display: grid;
+      gap: 104px 202px;
+      grid-template-columns: repeat(2, 188px);
+    }
+
+    &_icon {
+      display: block;
+      text-align: center;
+    }
+
+    &_text {
+      text-align: center;
+      display: block;
+      @extend %para;
+      color: #000;
+      margin-top: 16px;
+    }
+  }
+}
