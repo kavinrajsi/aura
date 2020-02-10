@@ -1,0 +1,111 @@
+.footer {
+  overflow: hidden;
+  background: #1C2028;
+  @include interpolate('padding-top', 600px, 48px, 900px, 108px, 'ease-in');
+
+  &__top {
+    display: block;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 48px;
+    grid-template-columns: 1fr;
+
+    @media(min-width: 900px) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    @media(min-width: 900px) {
+      .footer-address {
+        grid-area: 1 / 1 / 2 / 6;
+      }
+
+      .footer-contact {
+        grid-area: 1 / 6 / 2 / 10;
+      }
+
+      .footer-catch {
+        grid-area: 1 / 10 / 2 / 13;
+      }
+    }
+  }
+
+  &__title {
+    color: #FFFFFF;
+    @extend %heading5;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &-text {
+      margin-left: 16px;
+      @extend %para;
+      color: #BBBDBF;
+      font-size: 16px;
+
+      @media(min-width: 768px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &--bottom {
+    @media(min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include interpolate('margin-top', 600px, 64px, 900px, 80px, 'ease-in');
+    border-top: 1px solid #494D53;
+    @include interpolate('padding-top', 600px, 40px, 900px, 48px, 'ease-in');
+    @include interpolate('padding-bottom', 600px, 64px, 900px, 48px, 'ease-in');
+
+    &__logo {
+      text-align: center;
+      @media(min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    &__copyright {
+      padding-top: 40px;
+      padding-bottom: 24px;
+
+      @media (min-width: 768px) {
+        padding: 0;
+      }
+
+      text-align: center;
+    }
+
+    &__condition {
+      text-align: center;
+    }
+
+    &__copyright,
+    &__condition a {
+      font-family: var(--font);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #FFFFFF;
+    }
+
+    &__condition a+a {
+      margin-left: 42px;
+    }
+  }
+
+  .footer__content,
+  .address {
+    @extend %para;
+    color: #BBBDBF;
+  }
+}
