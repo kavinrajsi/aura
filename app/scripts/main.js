@@ -6,13 +6,13 @@ $(function () {
     loop: true,
     loopCount: Infinity
   });
-  $(window).scroll(function() {
-    var sticky = $('.header__nav'),
-      scroll = $(window).scrollTop();
+  // $(window).scroll(function () {
+  //   var sticky = $('.header__nav'),
+  //     scroll = $(window).scrollTop();
 
-    if (scroll >= 500) sticky.addClass('fixed');
-    else sticky.removeClass('fixed');
-  });
+  //   if (scroll >= 500) sticky.addClass('fixed');
+  //   else sticky.removeClass('fixed');
+  // });
   // Menu Nav
   function smoothSctollTop() {
     $('a').on('click', function (event) {
@@ -54,8 +54,8 @@ $(function () {
 
   // $vi = $(document).width();
   // console.log($vi);
+  var controller = new ScrollMagic.Controller();
   if ($(document).width() < 768) {
-    var controller = new ScrollMagic.Controller();
     var scene = new ScrollMagic.Scene({
         triggerElement: '.duration-enquire-card',
         offset: -120
@@ -63,6 +63,13 @@ $(function () {
       .setTween('.mcta', 0.5, {
         display: 'none'
       })
+      .addTo(controller);
   }
-
+  if ($(document).width() > 768) {
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: '.intro--cta'
+      })
+      .setClassToggle(".header__nav", "fixed") // add class toggle
+      .addTo(controller);
+  }
 });
