@@ -392,20 +392,21 @@
             </ul>
           </div>
           <div class="col-12 col-md-6">
-            <form>
+            <form action="#" method="post" novalidate="novalidate">
               <h4 class="form-title">Enroll for Free Demo</h4>
               <div class="form-group-marketer">
-                <input type="text" class="form-control" id="full-name" name="full-name" value=""
+                <input required type="text" class="form-control" id="full-name" name="full-name" value=""
                   placeholder="Full Name">
               </div>
               <div class="form-group-marketer">
-                <input type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail">
+                <input required type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail">
               </div>
               <div class="form-group-marketer">
-                <input type="tel" class="form-control" id="phone" name="phone" Number="" value=""
+                <input required type="tel" maxlength="10" minlength="10" class="form-control" id="phone" name="phone" Number="" value=""
                   placeholder="Phone Number">
               </div>
-              <button class="btn btn-default" type="button" name="button" onClick="sendContact();"> <i
+              <!-- <input type="submit" value="Enroll for Free Demo"> -->
+              <button class="btn btn-default" type="submit" name="button" onClick="sendContact();"> <i
                   class="fa fa-paper-plane-o" aria-hidden="true"></i>Enroll for Free Demo </button>
             </form>
           </div>
