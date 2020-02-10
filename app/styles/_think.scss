@@ -4,7 +4,7 @@
 
 .think-master-section {
   // padding-top: 145px;
-  @include interpolate('padding-top', 600px, 64px, 900px, 145px, 'ease-in');
+  @include interpolate('padding-top', 600px, 64px, 900px, 105px, 'ease-in');
   position: relative;
   z-index: 1;
   display: flex;
@@ -19,8 +19,8 @@
 
   >div:first-child {
     @media(min-width: 992px) {
-    padding-left: 6.4vw;
-  }
+      padding-left: 6.4vw;
+    }
   }
 
   &:before {
@@ -86,17 +86,18 @@
   background-position: left center;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjcyIDguNzlMMTAuNDMgMTMuMDlMOC43OCAxMS40NFYxMS40NEM4LjQyMDc2IDExLjAyMDUgNy43ODk0OCAxMC45NzE3IDcuMzcgMTEuMzMwOUM2Ljk1MDUyIDExLjY5MDEgNi45MDE2OCAxMi4zMjE0IDcuMjYwOTEgMTIuNzQwOUM3LjI5NDQxIDEyLjc4IDcuMzMwODggMTIuODE2NSA3LjM3IDEyLjg1TDkuNzIgMTUuMjFDOS45MDg3MiAxNS4zOTcyIDEwLjE2NDIgMTUuNTAxNSAxMC40MyAxNS41QzEwLjY5MjMgMTUuNDk4OSAxMC45NDM3IDE1LjM5NDcgMTEuMTMgMTUuMjFMMTYuMTMgMTAuMjFDMTYuNTIyMSA5LjgyMTA4IDE2LjUyNDcgOS4xODc5MiAxNi4xMzU4IDguNzk1OEMxNi4xMzM5IDguNzkzODYgMTYuMTMxOSA4Ljc5MTkzIDE2LjEzIDguNzlDMTUuNzQgOC40MDIyOCAxNS4xMSA4LjQwMjI4IDE0LjcyIDguNzlWOC43OVpNMTIgMkM2LjQ3NzE1IDIgMiA2LjQ3NzE1IDIgMTJDMiAxNy41MjI5IDYuNDc3MTUgMjIgMTIgMjJDMTcuNTIyOSAyMiAyMiAxNy41MjI5IDIyIDEyQzIyIDYuNDc3MTUgMTcuNTIyOSAyIDEyIDJWMlpNMTIgMjBDNy41ODE3MiAyMCA0IDE2LjQxODMgNCAxMkM0IDcuNTgxNzIgNy41ODE3MiA0IDEyIDRDMTYuNDE4MyA0IDIwIDcuNTgxNzIgMjAgMTJDMjAgMTYuNDE4MyAxNi40MTgzIDIwIDEyIDIwWiIgZmlsbD0iIzFDMjAyOCIvPgo8L3N2Zz4K");
+
+  &:last-child {
+    margin-bottom: 0;
+    @include interpolate('margin-bottom', 600px, 64px, 900px, 92px, 'ease-in');;
+  }
 }
 
 form {
   box-sizing: border-box;
   // width: 540px;
 
-  margin: 64px auto 0;
-
-  @media(min-width: 992px) {
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 
   @include interpolate('width', 600px, 334px, 900px, 540px, 'ease-in');
   background: #0852ED;
@@ -137,6 +138,10 @@ form {
     box-sizing: border-box;
     // width: 460px;
     @include interpolate('width', 600px, 306px, 900px, 460px, 'ease-in');
+  }
+
+  input::placeholder {
+    color: #ACC1EB;
   }
 
   button {
