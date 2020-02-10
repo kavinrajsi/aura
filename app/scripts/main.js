@@ -67,9 +67,60 @@ $(function () {
   }
   if ($(document).width() > 768) {
     var scene2 = new ScrollMagic.Scene({
-        triggerElement: '.intro--cta'
+      triggerElement: '.intro--cta',
+      offset: -120
       })
       .setClassToggle(".header__nav", "fixed") // add class toggle
       .addTo(controller);
   }
+});
+
+
+$(function(){
+
+  let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+  console.log("is Chrome ? ", isChrome);
+
+  let scenes = [];
+  let y = 0;
+
+  // initial smooth-scrollbar
+  let scroll = Scrollbar.init(
+    document.querySelector("#container-scroll")
+  );
+
+
+  // initiate ScrollMagic Controller
+  let controller =
+      new ScrollMagic.Controller(
+            {
+                refreshInterval: 0,
+            }
+      );
+
+  // update scrollY controller
+  if(isChrome){
+    controller.scrollPos(function () {
+      return y;
+    });
+  }
+
+
+  // listener smooth-scrollbar, update controller
+  scroll.addListener(function(status) {
+
+    y = status.offset.y;
+
+    if(isChrome){
+      controller.update();
+    } else {
+      scenes.forEach(function(scene){
+             scene.refresh();
+      });
+    }
+
+  });
+
+
 });
