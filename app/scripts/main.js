@@ -21,6 +21,7 @@ $(function () {
   }
   smoothSctollTop();
 
+
   // $('#free-call-form').submit(function (e) {
   //   e.preventDefault();
   //   // var valid;
@@ -64,7 +65,7 @@ $(function () {
       triggerElement: '.intro--cta',
       offset: -120
       })
-      .setClassToggle(".header__nav", "fixed") // add class toggle
+      .setClassToggle('.header__nav', 'fixed') // add class toggle
       .addTo(controller);
   }
 });
@@ -74,14 +75,14 @@ $(function(){
 
   let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-  console.log("is Chrome ? ", isChrome);
+  console.log('is Chrome ? ', isChrome);
 
   let scenes = [];
   let y = 0;
 
   // initial smooth-scrollbar
   let scroll = Scrollbar.init(
-    document.querySelector("#container-scroll")
+    document.querySelector('#container-scroll')
   );
 
 
