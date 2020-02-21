@@ -1,13 +1,13 @@
 <?php
-
-
 // the message
 $name = ($_POST['username']);
 $email = ($_POST['email']);
 $mobile = ($_POST['phoneNumber']);
 
-         $to = "exclusiveyash@gmail.com";
-         $subject = "[Arise Academy] Enquire by ". $name;
+$to = "exclusiveyash@gmail.com";
+$emailList = "siakvinraj@gmail.com";
+
+$subject = "[Arise Academy] Enquire by ". $name;
 
 $msg = "<html><body style='font-family:Lato,sans-serif;'>";
 $msg .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Enquire for Arise Academy</h2>\r\n";
@@ -19,23 +19,16 @@ $msg .= "</table>";
 $msg .= "</body></html>";
 
 
-// neeraja@digitalacademy360.com
+$header = "From:alphvvvm@premium59.web-hosting.com\r\n";
+$header .= "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html\r\n";
 
-         $header = "From:alphvvvm@premium59.web-hosting.com\r\n";
-         $header .= "MIME-Version: 1.0\r\n";
-         $header .= "Content-type: text/html\r\n";
+$retval = mail ($to,$subject,$msg,$header);
 
-         $retval = mail ($to,$subject,$msg,$header);
-
-         if( $retval == true ) {
-            // echo "Message sent successfully...";
-        // header( "refresh:2; https://da360.netlify.com");
-        print "<p class='success'>Mail Sent.</p>";
-
-         }else {
-            // echo "Message could not be sent...";
-            print "<p class='error'>Problem in Sending Mail.</p>";
-
-         }
+if( $retval == true ) {
+  print "<p class='success'>Mail Sent.</p>";
+}else {
+  print "<p class='error'>Problem in Sending Mail.</p>";
+}
 
 ?>
