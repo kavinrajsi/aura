@@ -6,7 +6,7 @@ $name = ($_POST['username']);
 $email = ($_POST['email']);
 $mobile = ($_POST['phoneNumber']);
 
-         $to = "sikavinraj@gmail.com";
+         $to = "exclusiveyash@gmail.com";
          $subject = "[Arise Academy] Enquire by ". $name;
 
 $msg = "<html><body style='font-family:Lato,sans-serif;'>";
