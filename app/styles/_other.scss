@@ -19,6 +19,10 @@
   }
 }
 
+.modal-body .think-master-section:after{
+  content: none;
+}
+
 .think-master-title {
   margin-bottom: 32px;
   font-family: var(--font);

@@ -1357,9 +1357,7 @@
                       </div>
                     </div>
                     <div class="enquire">
-                      <a href="#enquire" class="link__button link__button-solid"
-                        >Download Brochure</a
-                      >
+                      <button  class="link__button link__button-solid" type="button" data-toggle="modal" data-target="#exampleModal"> Download Brochure</button>
                     </div>
                   </div>
                 </div>
@@ -2057,6 +2055,88 @@
         </a>
       </div>
     </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <div class="container-fluid overflow-hidden" id="enquire">
+        <div class="container">
+          <div class="row think-master-section">
+            <div class="col-12 col-md-6">
+              <h2 class="think-master-title">
+                Think as a Marketer,
+                <strong> Live as a Marketer.</strong>
+              </h2>
+              <ul class="think-master-list">
+                <li>One-to-One Mentorship</li>
+                <li>Hand-holding throughtout the course</li>
+                <li>Work on live projects & Casestudies</li>
+                <li>Be apart of amazing community of Arisers</li>
+                <li>100% Placement assisstance</li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-6">
+              <form id="free-call-form" method="post">
+                <h4 class="form-title">Get Detailed Brochure</h4>
+                <div class="form-group-marketer">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    value=""
+                    placeholder="Full Name"
+                    pattern="[a-zA-Z0-9\s]+"
+                    required
+                  />
+                </div>
+                <div class="form-group-marketer">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    value=""
+                    placeholder="E-mail"
+                    required
+                  />
+                </div>
+                <div class="form-group-marketer">
+                  <input
+                    type="tel"
+                    maxlength="10"
+                    minlength="10"
+                    class="form-control"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    value=""
+                    placeholder="Phone Number"
+                    required
+                  />
+                </div>
+                <div id="mail-status"></div>
+                <button class="btn btn-default" type="submit" name="button">
+                  Download Brochure
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <!-- build:js scripts/vendor.js -->
     <script
       type="text/javascript"
