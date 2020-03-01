@@ -9,6 +9,7 @@ $(function () {
   });
 
   console.log('before');
+
 // mobile cta enable
   var controller = new ScrollMagic.Controller();
   if ($(document).width() < 768) {
@@ -97,21 +98,16 @@ $(function () {
   // slider arrow control
   var checkitem = function() {
     var $this;
-    $this = $('#testimonialControls');
-    if ($('#testimonialControls .carousel-inner .item:first').hasClass('active')) {
-      $this.children('.left').hide();
-      $this.children('.right').show();
-    } else if ($('#testimonialControls .carousel-inner .item:last').hasClass('active')) {
-      $this.children('.right').hide();
-      $this.children('.left').show();
+    $this = $('#testimonialControls .carousel-inner');
+    if ($('#testimonialControls .carousel-inner .carousel-item:first').hasClass('active')) {
+      $this.next('.carousel-control').children('.carousel-control-prev').addClass('opacity');
+    } else if ($('#testimonialControls .carousel-inner .carousel-item:last').hasClass('active')) {
+      $this.next('.carousel-control').children('.carousel-control-next').addClass('opacity');
     } else {
-      $this.children('.carousel-control').show();
+      $this.next('.carousel-control').children().removeClass('opacity');
     }
   };
 
   checkitem();
-  $('#testimonialControls').on('slid.bs.carousel', '', checkitem);
-
-
-
+  // $('#testimonialControls').on('slid.bs.carousel', '', checkitem);
 });
