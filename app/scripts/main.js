@@ -1,4 +1,5 @@
 $(function () {
+  // typing
   // 'use strict';
   const typed = new Typed('#type', {
     strings: ['Digital Marketing', 'UX/UI Design'],
@@ -6,6 +7,30 @@ $(function () {
     loop: true,
     loopCount: Infinity
   });
+
+  console.log('before');
+// mobile cta enable
+  var controller = new ScrollMagic.Controller();
+  if ($(document).width() < 768) {
+    console.log('<768');
+    var scene = new ScrollMagic.Scene({
+      triggerElement: '.duration-enquire-card',
+      offset: -120
+    })
+    .setTween('.mcta', 0.5, {
+      display: 'none'
+    })
+    .addTo(controller);
+  }
+  if ($(document).width() > 768) {
+    console.log('>768');
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: '.intro--cta',
+        offset: -120
+      })
+      .setClassToggle('.header__nav', 'fixed') // add class toggle
+      .addTo(controller);
+  }
 
   // Menu Nav
   function smoothSctollTop() {
@@ -21,7 +46,7 @@ $(function () {
   }
   smoothSctollTop();
 
-
+  // enq form
   $('#free-call-form').submit(function (e) {
     e.preventDefault();
     // var valid;
@@ -47,14 +72,9 @@ $(function () {
     // }
   });
 
-  // pdf download
-
-
+  // pdf download form
   $('#download-form').submit(function (e) {
     e.preventDefault();
-    // var valid;
-    // valid = validateContact();
-    // if(valid) {
     $.ajax({
       url: 'download.php',
       data: 'download_username=' +
@@ -72,27 +92,26 @@ $(function () {
         $('#mail-status-download').html(data);
       }
     });
-    // }
   });
 
+  // slider arrow control
+  var checkitem = function() {
+    var $this;
+    $this = $("#testimonialControls");
+    if ($("#testimonialControls .carousel-inner .item:first").hasClass("active")) {
+      $this.children(".left").hide();
+      $this.children(".right").show();
+    } else if ($("#testimonialControls .carousel-inner .item:last").hasClass("active")) {
+      $this.children(".right").hide();
+      $this.children(".left").show();
+    } else {
+      $this.children(".carousel-control").show();
+    }
+  };
 
-  var controller = new ScrollMagic.Controller();
-  if ($(document).width() < 768) {
-    var scene = new ScrollMagic.Scene({
-        triggerElement: '.duration-enquire-card',
-        offset: -120
-      })
-      .setTween('.mcta', 0.5, {
-        display: 'none'
-      })
-      .addTo(controller);
-  }
-  if ($(document).width() > 768) {
-    var scene2 = new ScrollMagic.Scene({
-        triggerElement: '.intro--cta',
-        offset: -120
-      })
-      .setClassToggle('.header__nav', 'fixed') // add class toggle
-      .addTo(controller);
-  }
+  checkitem();
+  $("#testimonialControls").on("slid.bs.carousel", "", checkitem);
+
+
+
 });
