@@ -47,6 +47,34 @@ $(function () {
     // }
   });
 
+  // pdf download
+
+
+  $('#download-form').submit(function (e) {
+    e.preventDefault();
+    // var valid;
+    // valid = validateContact();
+    // if(valid) {
+    $.ajax({
+      url: 'download.php',
+      data: 'download_username=' +
+        $('#download_username').val() +
+        '&download_email=' +
+        $('#download_email').val() +
+        '&download_phoneNumber=' +
+        $('#download_phoneNumber').val(),
+      type: 'POST',
+      success: function (data) {
+        $('#mail-status-download').html(data);
+        $('#download-form')[0].reset();
+      },
+      error: function (data) {
+        $('#mail-status-download').html(data);
+      }
+    });
+    // }
+  });
+
 
   var controller = new ScrollMagic.Controller();
   if ($(document).width() < 768) {

@@ -1,10 +1,11 @@
 <?php
 // the message
-$name = ($_POST['username']);
-$email = ($_POST['email']);
-$mobile = ($_POST['phoneNumber']);
+$name = ($_POST['download_username']);
+$email = ($_POST['download_email']);
+$mobile = ($_POST['download_phoneNumber']);
 
-$to = "exclusiveyash@gmail.com";
+// $to = "exclusiveyash@gmail.com";
+$to = "sikavinraj@gmail.com";
 
 $subject = "[Arise Academy] Enquire by ". $name;
 
@@ -25,7 +26,7 @@ $header .= "Content-type: text/html\r\n";
 $retval = mail ($to,$subject,$msg,$header);
 
 if( $retval == true ) {
-  print "<p class='success'>Mail Sent.</p>";
+  print "<iframe src='download_pdf.php' style='display:none;' /><p class='success'>Mail Sent.</p><script>$('#exampleModal').modal('toggle')</script>";
 }else {
   print "<p class='error'>Problem in Sending Mail.</p>";
 }
