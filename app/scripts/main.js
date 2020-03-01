@@ -1,7 +1,7 @@
 $(function () {
   // typing
   // 'use strict';
-  const typed = new Typed('#type', {
+  var typed = new Typed('#type', {
     strings: ['Digital Marketing', 'UX/UI Design'],
     typeSpeed: 30,
     loop: true,
@@ -97,20 +97,20 @@ $(function () {
   // slider arrow control
   var checkitem = function() {
     var $this;
-    $this = $("#testimonialControls");
-    if ($("#testimonialControls .carousel-inner .item:first").hasClass("active")) {
-      $this.children(".left").hide();
-      $this.children(".right").show();
-    } else if ($("#testimonialControls .carousel-inner .item:last").hasClass("active")) {
-      $this.children(".right").hide();
-      $this.children(".left").show();
+    $this = $('#testimonialControls');
+    if ($('#testimonialControls .carousel-inner .item:first').hasClass('active')) {
+      $this.children('.left').hide();
+      $this.children('.right').show();
+    } else if ($('#testimonialControls .carousel-inner .item:last').hasClass('active')) {
+      $this.children('.right').hide();
+      $this.children('.left').show();
     } else {
-      $this.children(".carousel-control").show();
+      $this.children('.carousel-control').show();
     }
   };
 
   checkitem();
-  $("#testimonialControls").on("slid.bs.carousel", "", checkitem);
+  $('#testimonialControls').on('slid.bs.carousel', '', checkitem);
 
 
 
