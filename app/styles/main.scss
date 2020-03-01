@@ -60,6 +60,7 @@
   &-area {
     background: #00E1AB;
     display: flex;
+    flex-direction: column;
     // padding-left: 55px;
     // padding-right: 95px;
     @include interpolate('padding-right', 600px, 15px, 900px, 95px, 'ease-in');
@@ -67,12 +68,15 @@
 
     &-image {
       display: inline;
-      img{
+
+      img {
+        width: 100%;
         background-blend-mode: normal;
         box-shadow: 0px 28px 40px rgba(12, 45, 66, 0.2);
         border-radius: 8px;
         position: relative;
         top: -57px;
+      @include interpolate('top', 600px, -20px, 900px, -57px, 'ease-in');
       }
     }
 
@@ -82,9 +86,9 @@
       padding-bottom: 114px;
 
 
-  @include interpolate('padding-left', 600px, 64px, 900px, 70px, 'ease-in');
-  @include interpolate('padding-top', 600px, 40px, 900px, 98px, 'ease-in');
-  @include interpolate('padding-bottom', 600px, 40px, 900px, 114px, 'ease-in');
+      @include interpolate('padding-left', 600px, 64px, 900px, 70px, 'ease-in');
+      @include interpolate('padding-top', 600px, 40px, 900px, 98px, 'ease-in');
+      @include interpolate('padding-bottom', 600px, 40px, 900px, 114px, 'ease-in');
 
       p {
         font-family: var(--font);
@@ -115,17 +119,19 @@
 }
 
 
-.carousel{
+.carousel {
   position: relative;
 }
 
 .carousel-control {
   position: absolute;
-bottom: -32px;
-right: 42px;
-  &-prev-icon{
+  bottom: -32px;
+  right: 42px;
+
+  &-prev-icon {
     transform: rotate(180deg);
   }
+
   &-prev-icon,
   &-next-icon {
     display: inline-flex;

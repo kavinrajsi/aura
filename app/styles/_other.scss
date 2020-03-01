@@ -1,4 +1,3 @@
-
 .think-master-section {
   padding-top: 145px;
   padding-bottom: 87px;
@@ -19,8 +18,16 @@
   }
 }
 
-.modal-body .think-master-section:after{
-  content: none;
+
+.modal-body {
+
+  .think-master-section:after {
+    content: none;
+  }
+}
+
+.modal-dialog{
+  margin: 0 !important;
 }
 
 .think-master-title {

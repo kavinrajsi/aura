@@ -1,6 +1,9 @@
 
 .illustration {
   &-mobile {
+    svg{
+    width: 100%;
+    }
     margin-top: 72px;
 
     @media (min-width: 992px) {
@@ -91,6 +94,8 @@
     display: grid;
     gap: 30px;
     grid-template-columns: 443px auto;
+    align-items: center;
+    justify-content: space-between;
 
 }
 }

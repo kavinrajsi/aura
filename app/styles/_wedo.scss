@@ -92,6 +92,7 @@
   position: relative;
   width: auto;
   margin: 0.5rem;
+  margin: 0;
   pointer-events: none;
 }
 
@@ -263,7 +264,7 @@
 @media (min-width: 576px) {
   .modal-dialog {
     // max-width: 500px;
-    margin: 1.75rem auto;
+    // margin: 1.75rem auto;
   }
   .modal-dialog-scrollable {
     max-height: calc(100% - 3.5rem);

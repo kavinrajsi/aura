@@ -77,6 +77,14 @@
   @include interpolate('padding-left', 600px, 16px, 900px, 48px, 'ease-in');
   @include interpolate('padding-right', 600px, 16px, 900px, 48px, 'ease-in');
   @include interpolate('margin-bottom', 600px, 62px, 900px, 224px, 'ease-in');
+  @media(max-width: 599px){
+    .duration-card{
+      justify-content: center;
+    }
+    .enquire{
+      text-align: center;
+    }
+  }
 }
 
 .duration-label {
