@@ -7,7 +7,7 @@ $mobile = ($_POST['download_phoneNumber']);
 // $to = "exclusiveyash@gmail.com";
 $to = "sikavinraj@gmail.com";
 
-$subject = "[Arise Academy] Enquire by ". $name;
+$subject = "[Arise Academy] Enquire by ". $name."from Brochure download";
 
 $msg = "<html><body style='font-family:Lato,sans-serif;'>";
 $msg .= "<h2 style='font-weight:bold;border-bottom:1px dotted #ccc;'>Enquire for Arise Academy</h2>\r\n";
